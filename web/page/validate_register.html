@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>用户注册</title>
+		<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/ico" />
+		<link rel="stylesheet" href="../assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../assets/css/app.css">
+
+		<!--bootstrap-->
+		<link rel="shortcut icon" href="../assets/img/favicon.ico" type="image/ico" />
+		<link rel="stylesheet" href="../assets/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+		<style>
+			.xl-div {
+				margin-top: 6px;
+				width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/amazeui.min.js"></script>
+
+		<div style="width: 50%;margin-left: auto;margin-right: auto;">
+			<form action="" class="am-form" data-am-validator>
+				<fieldset>
+					<legend>用户注册</legend>
+					<div class="am-form-group">
+						<span class="am-input-group-label"><i class="am-icon-user am-icon-fw"></i></span>
+						<input type="text" id="doc-vld-name-2" minlength="3" placeholder="输入用户名（至少 3 个字符）" required/>
+					</div>
+
+					<div class="am-form-group">
+						<label for="doc-vld-email-2">邮箱：</label>
+						<input type="email" id="doc-vld-email-2" placeholder="输入邮箱" required/>
+					</div>
+
+					<div class="am-form-group">
+						<label for="doc-vld-url-2">网址：</label>
+						<input type="url" id="doc-vld-url-2" placeholder="输入网址" required/>
+					</div>
+
+					<div class="am-form-group">
+						<label for="doc-vld-age-2">年龄：</label>
+						<input type="number" class="" id="doc-vld-age-2" placeholder="输入年龄  18-120" min="18" max="120" required />
+					</div>
+
+					<div class="am-form-group">
+						<label class="am-form-label">爱好：</label>
+						<label class="am-checkbox-inline">
+							<input type="checkbox" value="橘子" name="docVlCb" minchecked="2" maxchecked="4" required> 橘子
+						</label>
+						<label class="am-checkbox-inline">
+							<input type="checkbox" value="苹果" name="docVlCb"> 苹果
+						</label>
+						<label class="am-checkbox-inline">
+							<input type="checkbox" value="菠萝" name="docVlCb"> 菠萝
+						</label>
+						<label class="am-checkbox-inline">
+							<input type="checkbox" value="芒果" name="docVlCb"> 芒果
+						</label>
+						<label class="am-checkbox-inline">
+							<input type="checkbox" value="香蕉" name="docVlCb"> 香蕉
+						</label>
+					</div>
+
+					<div class="am-form-group">
+						<label>性别： </label>
+						<label class="am-radio-inline">
+							<input type="radio" value="" name="docVlGender" required> 男
+						</label>
+						<label class="am-radio-inline">
+							<input type="radio" name="docVlGender"> 女
+						</label>
+						<label class="am-radio-inline">
+							<input type="radio" name="docVlGender"> 其他
+						</label>
+					</div>
+
+					<div class="am-form-group">
+						<label for="doc-select-1">下拉单选框</label>
+						<select id="doc-select-1" required>
+							<option value="">-=请选择一项=-</option>
+							<option value="option1">选项一...</option>
+							<option value="option2">选项二.....</option>
+							<option value="option3">选项三........</option>
+						</select>
+						<span class="am-form-caret"></span>
+					</div>
+
+					<div class="am-form-group">
+						<label for="doc-select-2">多选框</label>
+						<select multiple class="" id="doc-select-2" minchecked="2" maxchecked="4">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						</select>
+					</div>
+
+					<div class="am-form-group">
+						<label for="doc-vld-ta-2">评论：</label>
+						<textarea id="doc-vld-ta-2" minlength="10" maxlength="100"></textarea>
+					</div>
+
+					<button class="am-btn am-btn-secondary" type="submit">提交</button>
+				</fieldset>
+			</form>
+		</div>
+	</body>
+
+</html>

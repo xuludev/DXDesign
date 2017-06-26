@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<title>ECharts</title>
+</head>
+
+<body>
+	<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+	<div id="main" style="height:400px"></div>
+	<!-- ECharts单文件引入 -->
+	<script src="../assets/echarts-2.2.7/build/dist/echarts.js"></script>
+	<script type="text/javascript">
+		 // 路径配置
+		require.config({
+			paths: {
+				echarts: '../assets/echarts-2.2.7/build/dist'
+			}
+		});
+		 // 使用
+		require(
+			[
+				'echarts',
+				'echarts/chart/bar', // 使用柱状图就加载bar模块，按需加载
+				'echarts/chart/line' // 使用柱状图就加载bar模块，按需加载
+			],
+			function(ec) {
+				// 基于准备好的dom，初始化echarts图表
+				var myChart = ec.init(document.getElementById('main'));
+				var option = {
+					title: {
+						text: '热门手机价格变动表',
+						subtext: 'Price Range'
+					},
+					tooltip: {
+						trigger: 'axis'
+					},
+					legend: {
+						data: ['最高价格', '最低价格']
+					},
+					toolbox: {
+						show: true,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['line', 'bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: true,
+					xAxis: [{
+						type: 'category',
+						data: ['iPhone6', 'iPhone 6 Plus', '魅族MX5', '小米Note', '三星Galaxy A8', '华为P8', '红米Note2', '三星Galaxy S6']
+					}],
+					yAxis: [{
+						type: 'value'
+					}],
+					series: [{
+						name: '最高价格',
+						type: 'bar',
+						data: [5088, 6688, 1999, 2999, 2999, 2999, 999, 3999],
+						markPoint: {
+							data: [{
+								type: 'max',
+								name: '历史最高'
+							}, {
+								type: 'min',
+								name: '历史最低'
+							}]
+						},
+						markLine: {
+							data: [{
+								type: 'average',
+								name: '平均值'
+							}]
+						}
+					}, {
+						name: '最低价格',
+						type: 'bar',
+						data: [4488, 5688, 1799, 1999, 2499, 2399, 799, 2999],
+						markPoint: {
+							data: [{
+								name: '历史最高',
+								value: 5688,
+								xAxis: 1,
+								yAxis: 5688,
+								symbolSize: 18
+							}, {
+								name: '历史最低',
+								value: 799,
+								xAxis: 6,
+								yAxis: 3
+							}]
+						},
+						markLine: {
+							data: [{
+								type: 'average',
+								name: '平均值'
+							}]
+						}
+					}]
+				};
+				// 为echarts对象加载数据 
+				myChart.setOption(option);
+			}
+		);
+	</script>
+</body>
